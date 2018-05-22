@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { ImageBackground, View, StatusBar, Modal } from "react-native";
+import { ImageBackground, View, StatusBar } from "react-native";
 import { Container, Button, H3, Text } from "native-base";
+import Modal from 'react-native-modal';
 
 import styles from "./styles";
-import OneSignal from 'react-native-onesignal';
 
 const launchscreenLogo = require("../../../assets/slider.png");
 
@@ -16,57 +16,15 @@ class Home extends Component {
         this.setState({modalVisible: visible});
       }
 
-
-    componentWillMount() {
-        OneSignal.init("2ff0c8f9-3d76-494d-9dcf-80efa47672c2");
-
-        OneSignal.addEventListener('received', this.onReceived);
-        OneSignal.addEventListener('opened', this.onOpened);
-        OneSignal.addEventListener('ids', this.onIds);
-    }
-
-    componentWillUnmount() {
-        OneSignal.removeEventListener('received', this.onReceived);
-        OneSignal.removeEventListener('opened', this.onOpened);
-        OneSignal.removeEventListener('ids', this.onIds);
-    }
-
-    onReceived(notification) {
-        console.log("Notification received: ", notification);
-    }
-
-    onOpened(openResult) {
-        console.log('Message: ', openResult.notification.payload.body);
-        console.log('Data: ', openResult.notification.payload.additionalData);
-        console.log('isActive: ', openResult.notification.isAppInFocus);
-        console.log('openResult: ', openResult);
-    }
-
-    onIds(device) {
-        console.log('Device info: ', device);
-    }
     render() {
         return (
             <Container  style={{ backgroundColor: "#ffffff"}}>
-                <StatusBar barStyle="light-content" />
-                <Modal
-          animationType="slide"
-          transparent={false}
-          visible={this.state.modalVisible}
-          onRequestClose={() => {
-            alert('Modal has been closed.');
-          }}>
-          <View style={{marginTop: 22}}>
-            <View>
-              <Text>Hello World!</Text>
-
-              <Button rounded info style={styles.mb15,{alignSelf: 'center',width:200,height:50,alignItems: 'center',justifyContent: 'center',}}
-                            onPress={() => this.setModalVisible(!this.state.modalVisible)}>
-                <Text>Hide Modal</Text>
-              </Button>
-            </View>
+            <Modal isVisible={true}>
+          <View style={{ flex: 1 }}>
+            <Text>I am the modal content!</Text>
           </View>
         </Modal>
+                <StatusBar barStyle="light-content" />
                 <ImageBackground style={styles.imageContainer}>
                     <View style={styles.headerText}>
                         <Text
