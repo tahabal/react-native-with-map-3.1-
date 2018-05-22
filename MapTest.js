@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import { View, StyleSheet } from 'react-native';
+import { Header, Left, Body, Title, Right } from 'native-base';
 class MapTest extends Component {
     render () {
         return (
             <View style={styles.container}>
+                <Header>
+                    <Left />
+                    <Body>
+                        <Title>Header</Title>
+                    </Body>
+                    <Right />
+                </Header>
                 <MapView
                     provider={PROVIDER_GOOGLE}
                     style={styles.map}
