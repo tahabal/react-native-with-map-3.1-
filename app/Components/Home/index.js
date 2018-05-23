@@ -1,29 +1,23 @@
 import React, { Component } from "react";
 import { ImageBackground, View, StatusBar } from "react-native";
 import { Container, Button, H3, Text } from "native-base";
-import Modal from 'react-native-modal';
 
 import styles from "./styles";
 
 const launchscreenLogo = require("../../../assets/slider.png");
 
-class Home extends Component {
+export default class Home extends Component {
     state = {
-        modalVisible: false,
+        isModalVisible: false
       };
     
-      setModalVisible(visible) {
-        this.setState({modalVisible: visible});
-      }
+      _toggleModal = () =>
+        this.setState({ isModalVisible: !this.state.isModalVisible });
 
     render() {
         return (
             <Container  style={{ backgroundColor: "#ffffff"}}>
-            <Modal isVisible={true}>
-          <View style={{ flex: 1 }}>
-            <Text>I am the modal content!</Text>
-          </View>
-        </Modal>
+
                 <StatusBar barStyle="light-content" />
                 <ImageBackground style={styles.imageContainer}>
                     <View style={styles.headerText}>
@@ -51,10 +45,10 @@ class Home extends Component {
                     </View>
                     <View style={styles.buttonContent}>
                         <Button rounded info style={styles.mb15,{alignSelf: 'center',width:200,height:50,alignItems: 'center',justifyContent: 'center',}}
-                            onPress={() => this.setModalVisible(true)}>
+                            onPress={() => this.props.navigation.navigate('Login')}>
                             <Text style={{
                                 fontSize: 15,
-                            }}>Lets Go!</Text>
+                            }}>Giriş Yap</Text>
                         </Button>
                     </View>
                 </ImageBackground>
@@ -62,6 +56,4 @@ class Home extends Component {
         );
     }
 }
-  
-export default Home;
   

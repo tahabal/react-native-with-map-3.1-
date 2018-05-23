@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native';
-import Home from './app/Components/Home';
+import App from './App';
 
-AppRegistry.registerComponent('UseMap', () => Home);
+AppRegistry.registerComponent('UseMap', () => App);
