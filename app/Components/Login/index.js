@@ -8,7 +8,7 @@ import styles from "./styles";
 
 const loginBackground = require("../../../assets/loginbg.png");
 
-class Login extends Component {
+export default class Login extends Component {
     state = {
         isModalVisible: false
       };
@@ -18,7 +18,7 @@ class Login extends Component {
 
     render() {
         return (
-            <View>
+            <Container>
                 <Modal isVisible={this.state.isModalVisible}>
                     <View style={{ flex: 1 }}>
                         <Text>Hello!</Text>
@@ -37,7 +37,13 @@ class Login extends Component {
 
                 <ImageBackground
                     source={loginBackground}
-                    styles={styles.imageContainer} />
+                    style={styles.imageContainer}>
+
+                </ImageBackground>
+                <View style={{flex: 1, backgroundColor: '#fff'}}>
+                    <Text style={styles.text}>
+                        Stuff
+                    </Text>
                     <Button 
                     rounded 
                     info 
@@ -47,10 +53,9 @@ class Login extends Component {
                             fontSize: 15,}}>
                             Lets Go!
                         </Text>
-                    </Button>
-            </View>
+                </Button>
+                </View>
+            </Container>
         );
     }
 }
-
-export default Login;

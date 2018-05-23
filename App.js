@@ -1,15 +1,16 @@
 
 import React, { Component } from 'react';
-import { View } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 
 import Home from './app/Components/Home';
 import Login from './app/Components/Login';
+import MapTest from './app/Components/MapTest.js';
 
 const AppNavigator = createStackNavigator(
     {
         Home: { screen: Home },
-        Login: { screen: Login }
+        Login: { screen: Login },
+        Map: { screen: MapTest }
     },
     {
         initialRouteName: 'Home',

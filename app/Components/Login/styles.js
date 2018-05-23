@@ -1,11 +1,13 @@
 const React = require("react-native");
 const { Dimensions, Platform } = React;
-const deviceHeight = Dimensions.get("window").height;
-const deviceWidth=Dimensions.get("window").width;
+const deviceHeight = Dimensions.get('window').height;
+const deviceWidth=Dimensions.get('window').width;
 
 export default {
     imageContainer: {
-        flex: 1
+        flex: 3,
+        width: deviceWidth,
+        height: deviceHeight,
     },
     headerText: {
         width:300,
@@ -13,7 +15,7 @@ export default {
         left: Platform.OS === "android" ? 40 : 50,
     },
     slider:{
-        width: deviceWidth,
+        width:deviceWidth,
         marginTop: 30,
     },
     sliderText:{
@@ -38,8 +40,8 @@ export default {
         height: deviceWidth/2,
     },
     text: {
-        color: "#D8D8D8",
-        bottom: 6,
-        marginTop: 5
+        color: "#758692",
+        marginTop: 15,
+        textAlign: 'center'
     }
 };

@@ -7,12 +7,6 @@ import styles from "./styles";
 const launchscreenLogo = require("../../../assets/slider.png");
 
 export default class Home extends Component {
-    state = {
-        isModalVisible: false
-      };
-    
-      _toggleModal = () =>
-        this.setState({ isModalVisible: !this.state.isModalVisible });
 
     render() {
         return (
