@@ -37,7 +37,7 @@ export default {
     },
     logo: {
         width: deviceWidth,
-        height: deviceWidth/2,
+        height: deviceHeight / 2.5,
     },
     text: {
         color: "#D8D8D8",

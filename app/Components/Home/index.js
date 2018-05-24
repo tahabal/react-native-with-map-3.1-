@@ -23,9 +23,9 @@ export default class Home extends Component {
                             }}
                         >Welcome To AnadoluPASS</Text>
                     </View>
-                    <View style={styles.slider}>
-                        <ImageBackground source={launchscreenLogo} style={styles.logo} />
-                    </View>
+                    
+                    <ImageBackground source={launchscreenLogo} style={styles.logo} />
+                    
                     <View style={styles.sliderText}>
                         <Text
                             style={{
@@ -38,7 +38,7 @@ export default class Home extends Component {
                         </Text>
                     </View>
                     <View style={styles.buttonContent}>
-                        <Button rounded info style={styles.mb15,{alignSelf: 'center',width:200,height:50,alignItems: 'center',justifyContent: 'center',}}
+                        <Button rounded info style={styles.mb15,{alignSelf: 'center',width:150,height:50,alignItems: 'center',justifyContent: 'center',}}
                             onPress={() => this.props.navigation.navigate('Login')}>
                             <Text style={{
                                 fontSize: 15,

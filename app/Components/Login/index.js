@@ -1,60 +1,117 @@
 import React, {Component} from 'react';
-import { View, ImageBackground } from 'react-native';
+import { View, ImageBackground, Image,Alert } from 'react-native';
 
-import { Container, Button, H3, Text } from "native-base";
+import { Container, Button, Text, Item, Input, Icon } from "native-base";
 import Modal from 'react-native-modal';
+
+import NewUser from '../NewUser';
+import Activation from '../Activation';
 
 import styles from "./styles";
 
-const loginBackground = require("../../../assets/loginbg.png");
+const loginBackground = require("../../../assets/loginBg.png");
+const logoImage = require('../../../assets/logo.png');
 
 export default class Login extends Component {
-    state = {
-        isModalVisible: false
-      };
-    
-    _toggleModal = () =>
-        this.setState({ isModalVisible: !this.state.isModalVisible });
 
+    constructor(props) {
+        super(props);
+        this.modalControl = this.modalControl.bind(this);
+        this.state = {
+            visibleModal: null
+        };
+    }
+
+    modalControl(e) {
+        this.setState({visibleModal: e});
+    }
+
+    
     render() {
         return (
             <Container>
-                <Modal isVisible={this.state.isModalVisible}>
-                    <View style={{ flex: 1 }}>
-                        <Text>Hello!</Text>
-                        <Button rounded info style={styles.mb15,{alignSelf: 'center',width:200,height:50,alignItems: 'center',justifyContent: 'center',}}
-                                onPress={() => this._toggleModal()}>
-                                <Text style={{
-                                    fontSize: 15,}}>
-                                    Lets Go!
-                                </Text>
-                            </Button>
-                        <Text>Hide me!</Text>
-                    </View>
-                </Modal>
-
-
-
                 <ImageBackground
                     source={loginBackground}
                     style={styles.imageContainer}>
 
-                </ImageBackground>
-                <View style={{flex: 1, backgroundColor: '#fff'}}>
-                    <Text style={styles.text}>
-                        Stuff
-                    </Text>
-                    <Button 
-                    rounded 
-                    info 
-                    style={styles.mb15,{alignSelf:'center',width:200,height:50,alignItems: 'center',justifyContent: 'center',}}
-                    onPress={() => this._toggleModal()}>
-                        <Text style={{
-                            fontSize: 15,}}>
-                            Lets Go!
+                    <View style={{alignItems:'center',flex:2}}>
+                        <Image 
+                            style={styles.logo}
+                            resizeMode='contain'
+                            source={logoImage}/>
+                    </View>
+
+                    <View style={styles.loginBox}>
+                        <Item  style={styles.input} rounded>
+                            <Input placeholder='Kullanıcı Adı' 
+                                placeholderTextColor='#fff'  
+                                style={styles.inputText}/>
+                        </Item>
+                        <Item  style={styles.input} rounded>
+                            <Input placeholder='Şifre' 
+                                secureTextEntry 
+                                placeholderTextColor='#fff' 
+                                style={styles.inputText}/>
+                        </Item>
+                        <Text style={styles.text}>
+                            Şifremi Unuttum? 
                         </Text>
-                </Button>
-                </View>
+                    </View>
+
+
+                    <View style={{flex:1}}>
+                        <Button 
+                            rounded 
+                            info 
+                            style={styles.buttonLogin}
+                            onPress={() => this.props.navigation.navigate('Main')}>
+                            <Text style={{
+                                fontSize: 15,fontFamily: 'Varela Round Regular'}}>
+                                Giriş Yap
+                            </Text>
+                        </Button>
+                    </View>
+
+
+                    <View style={styles.footer}>
+                        <Text style={styles.text}>
+                            Henüz kaydolmadınız mı?
+                        </Text>
+                        <Text style={styles.text}>
+                            Kayıt olmak çok kolay ve hızlıdır.
+                        </Text>
+                        <Button 
+                            rounded 
+                            danger 
+                            style={styles.buttonUye}
+                            onPress={() => this.setState({visibleModal: 1})}>
+                            <Text style={{
+                                fontSize: 15,fontFamily:'Varela Round Regular'}}>
+                                Üye Ol!
+                            </Text>
+                        </Button>
+                    </View>
+                </ImageBackground>
+
+
+
+                <Modal 
+                    isVisible={this.state.visibleModal === 1}
+                    style={styles.modalContent}>
+                    <NewUser
+                        modalControl={this.modalControl}
+                    />
+                </Modal>
+
+
+
+                <Modal 
+                    isVisible={this.state.visibleModal === 2}
+                    style={styles.modalContent}>
+                    <Activation
+                        modalControl={this.modalControl}
+                    />
+                </Modal>
             </Container>
         );
     }
