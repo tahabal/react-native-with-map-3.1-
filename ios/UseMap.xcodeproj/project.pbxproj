@@ -51,6 +51,8 @@
 		5549622BD1A8438FB244A8E6 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 577B727D98AB459894DD69C7 /* SimpleLineIcons.ttf */; };
 		6255E2AC9D5640AD8C8F9C4F /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D3D1AE7466845E997C191F6 /* Zocial.ttf */; };
 		ACFED0F736484C83B2B9E3FB /* libRCTOneSignal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7347A94E0E64436198DF2D1B /* libRCTOneSignal.a */; };
+		F7E59D8B5C694686A838E42D /* Baloo Bhai Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B317D437D424720B3AA8972 /* Baloo Bhai Regular.ttf */; };
+		F76890A30EFA43F09A4F7E89 /* Varela Round Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F779FD1AE834CC9AF3C6D15 /* Varela Round Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -372,6 +374,8 @@
 		6D3D1AE7466845E997C191F6 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/native-base/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		AE636BB0611A43E195F49E77 /* RCTOneSignal.xcodeproj */ = {isa = PBXFileReference; name = "RCTOneSignal.xcodeproj"; path = "../node_modules/react-native-onesignal/ios/RCTOneSignal.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		7347A94E0E64436198DF2D1B /* libRCTOneSignal.a */ = {isa = PBXFileReference; name = "libRCTOneSignal.a"; path = "libRCTOneSignal.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		0B317D437D424720B3AA8972 /* Baloo Bhai Regular.ttf */ = {isa = PBXFileReference; name = "Baloo Bhai Regular.ttf"; path = "../assets/fonts/Baloo Bhai Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2F779FD1AE834CC9AF3C6D15 /* Varela Round Regular.ttf */ = {isa = PBXFileReference; name = "Varela Round Regular.ttf"; path = "../assets/fonts/Varela Round Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -653,6 +657,8 @@
 				7A68D9ADE7024414A7B00753 /* rubicon-icon-font.ttf */,
 				577B727D98AB459894DD69C7 /* SimpleLineIcons.ttf */,
 				6D3D1AE7466845E997C191F6 /* Zocial.ttf */,
+				0B317D437D424720B3AA8972 /* Baloo Bhai Regular.ttf */,
+				2F779FD1AE834CC9AF3C6D15 /* Varela Round Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1116,6 +1122,8 @@
 				FE57A5F8C13345F099572380 /* rubicon-icon-font.ttf in Resources */,
 				5549622BD1A8438FB244A8E6 /* SimpleLineIcons.ttf in Resources */,
 				6255E2AC9D5640AD8C8F9C4F /* Zocial.ttf in Resources */,
+				F7E59D8B5C694686A838E42D /* Baloo Bhai Regular.ttf in Resources */,
+				F76890A30EFA43F09A4F7E89 /* Varela Round Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
