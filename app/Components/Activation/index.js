@@ -10,7 +10,16 @@ export default class Activation extends Component {
         var modalControl = this.props.modalControl;
         return(
             <View style={{ flex: 1 }}>
-                <Text style={styles.modalHeader}>Aktivasyon</Text>
+                <View>
+                    <Text style={styles.modalHeader}>Aktivasyon</Text>
+                    <Button 
+                        transparent
+                        dark
+                        style={{position:'absolute',right:0,top:0}}
+                        onPress={() => modalControl(null)}>
+                        <Icon name="close"/>
+                    </Button>
+                </View>
                 <Text style={styles.text}>
                     Lütfen 4 haneli SMS kodunuzu giriniz.
                 </Text>

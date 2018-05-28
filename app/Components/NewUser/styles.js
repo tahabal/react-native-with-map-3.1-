@@ -30,6 +30,12 @@ export default {
         width:150,
         height:50,
         justifyContent: 'center'
+    },
+    text: {
+        fontFamily: 'Varela Round Regular',
+        color: "#758692",
+        marginTop: 3,
+        textAlign: 'center'
     }
 
 };

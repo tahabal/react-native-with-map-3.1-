@@ -28,7 +28,15 @@ export default {
         alignSelf:'center',
         width:150,
         height:50,
+        marginBottom: 20,
         justifyContent: 'center'
+    },
+    text: {
+        fontFamily: 'Varela Round Regular',
+        color: "#758692",
+        marginTop: 3,
+        marginBottom: 20,
+        textAlign: 'center'
     }
 
 };

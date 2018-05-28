@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, ScrollView, Keyboard } from 'react-native';
-import {  Button, Text, Item, Input, Icon } from 'native-base';
+import {  Button, Text, Item, Input, Icon, Header, Left, Right, Body } from 'native-base';
 
 
 import styles from './styles';
@@ -29,7 +29,16 @@ export default class NewUser extends Component {
         var modalControl = this.props.modalControl;
         return(
             <ScrollView style={styles.subBox}>
-                <Text style={styles.modalHeader}>Yeni Üyelik</Text>
+                <View>
+                    <Text style={styles.modalHeader}>Yeni Üyelik</Text>
+                    <Button 
+                        transparent
+                        dark
+                        style={{position:'absolute',right:-15,top:-15}}
+                        onPress={() => modalControl(null)}>
+                        <Icon name="close"/>
+                    </Button>
+                </View>
                 <Item  style={styles.inputNew} rounded>
                     <Input placeholder='Kullanıcı Adı'
                         secureTextEntry
