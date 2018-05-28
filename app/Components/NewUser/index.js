@@ -1,10 +1,29 @@
 import React, { Component } from 'react';
-import { View, ScrollView } from 'react-native';
+import { View, ScrollView, Keyboard } from 'react-native';
 import {  Button, Text, Item, Input, Icon } from 'native-base';
+
 
 import styles from './styles';
 
 export default class NewUser extends Component {
+
+    componentDidMount () {
+        this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow);
+        this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
+    }
+    
+    componentWillUnmount () {
+        this.keyboardDidShowListener.remove();
+        this.keyboardDidHideListener.remove();
+    }
+
+    _keyboardDidShow () {
+        alert('Keyboard Shown');
+    }
+    
+    _keyboardDidHide () {
+        alert('Keyboard Hidden');
+    }
 
     render() {
         var modalControl = this.props.modalControl;
