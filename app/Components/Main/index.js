@@ -7,8 +7,11 @@ export default class Main extends Component {
         return(
             <Header>
                 <Left>
-                    <Button transparent>
-                        <Icon name='menu' />
+                    <Button
+                        transparent
+                        onPress={() => this.props.navigation.openDrawer()}
+                    >
+                        <Icon name="ios-menu" />
                     </Button>
                 </Left>
                 <Body />

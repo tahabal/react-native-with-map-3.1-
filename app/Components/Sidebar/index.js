@@ -13,61 +13,59 @@ import {
 } from "native-base";
 import styles from "./style";
 
-const drawerCover = require("../../../assets/drawer-cover.png");
-const drawerImage = require("../../../assets/logo-kitchen-sink.png");
 const datas = [
     {
         name: "Anasayfa",
-        route: "Anatomy",
+        route: "Home",
         icon: "help-buoy",
         bg: "#C5F442"
     },
     {
         name: "Profilim",
-        route: "Anatomy",
+        route: "Profile",
         icon: "phone-portrait",
         bg: "#5DCEE2"
     },
     {
-        route: "NHListAvatar",
+        route: "Restaurants",
         name: "Restorantlar",
         icon: "checkmark-circle",
         bg: "#DA4437",
     },
     {
-        route: "NHListAvatar",
-        name: "Restorantlar Harita",
+        route: "Map",
+        name: "Harita",
         icon: "notifications",
         bg: "#4DCAE0",
     },
     {
-        route: "NHListAvatar",
+        route: "Promotions",
         name: "Kampanyalar",
         icon: "search",
         bg: "#477EEA",
     }
     ,
     {
-        route: "NHListAvatar",
+        route: "Favourites",
         name: "Favorilerim",
         icon: "lock",
         bg: "#5DCEE2",
     },
     {
-        route: "NHListAvatar",
+        route: "Help",
         name: "Yardım",
         icon: "lock",
         bg: "#5DCEE2",
     }
     ,
     {
-        route: "NHListAvatar",
+        route: "Settings",
         name: "Ayarlar",
         icon: "lock",
         bg: "#5DCEE2",
     },
     {
-        route: "NHListAvatar",
+        route: "Logout",
         name: "Çıkış",
         icon: "lock",
         bg: "#5DCEE2",
@@ -90,8 +88,6 @@ class SideBar extends Component {
           bounces={false}
           style={{ flex: 1, backgroundColor: "#fff", top: -1 }}
         >
-          <Image source={drawerCover} style={styles.drawerCover} />
-          <Image square style={styles.drawerImage} source={drawerImage} />
 
           <List
             dataArray={datas}
